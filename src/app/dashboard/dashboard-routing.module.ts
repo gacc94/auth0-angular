@@ -8,6 +8,7 @@ import {AuthGuard} from "@auth0/auth0-angular";
 const routes: Routes = [
     {
         path: '',
+        title: 'main',
         component: MainComponent,
         children: [
             {

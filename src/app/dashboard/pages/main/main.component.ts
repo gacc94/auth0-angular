@@ -23,14 +23,14 @@ export class MainComponent implements OnInit{
     }
 
     ngOnInit(){
-        this.auth.isAuthenticated$.subscribe({
-            next: (value) => {
-                if(!value){
-                    this.router.navigate(['/auth']).then();
-                }
-            },
-            error: err => {
-            }
-        })
+        // this.auth.isAuthenticated$.subscribe({
+        //     next: (value) => {
+        //         if(!value){
+        //             this.router.navigate(['/auth']).then();
+        //         }
+        //     },
+        //     error: err => {
+        //     }
+        // })
     }
 }

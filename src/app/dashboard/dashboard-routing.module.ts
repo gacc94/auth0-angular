@@ -4,6 +4,7 @@ import {MainComponent} from "./pages/main/main.component";
 import {AdminComponent} from "./pages/admin/admin.component";
 import {ProductsComponent} from "./pages/products/products.component";
 import {AuthGuard} from "@auth0/auth0-angular";
+import {PermissionGuard} from "../guard/permission.guard";
 
 const routes: Routes = [
     {
@@ -14,6 +15,7 @@ const routes: Routes = [
             {
                 path: 'admin',
                 component: AdminComponent,
+                canActivate: [PermissionGuard]
 
             },
             {

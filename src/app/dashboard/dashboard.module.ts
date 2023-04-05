@@ -6,13 +6,17 @@ import { MainComponent } from './pages/main/main.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import {SharedModule} from "../shared/shared.module";
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
     declarations: [
         MainComponent,
         ProductsComponent,
-        AdminComponent
+        AdminComponent,
+        SidebarComponent,
+        NavbarComponent
     ],
     imports: [
         CommonModule,

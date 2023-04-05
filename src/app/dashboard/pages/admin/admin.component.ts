@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "@auth0/auth0-angular";
 import {Router} from "@angular/router";
 import {of} from "rxjs";
+import {AuthMainService} from "../../../service/auth-main.service";
 
 @Component({
     selector: 'app-admin',
@@ -9,31 +10,26 @@ import {of} from "rxjs";
     styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit{
-    private val:string | null =localStorage.getItem('@@auth0spajs@@::LIljVyn8UNv3x1gmpLjiysJtCvmFFf5c::@@user@@')
 
     constructor(
         public auth: AuthService,
-        private router: Router
+        private router: Router,
+        private authMain: AuthMainService
     ) {}
 
     ngOnInit() {
         this.auth.idTokenClaims$.subscribe({
             next: (value) => {
-                // const raw = JSON.parse(window.atob(value?.__raw))
-                // console.log(value?.__raw );
-                if(this.val){
-                    console.log(JSON.parse(this.val));
+                console.log(value)
+            }
+        })
+
+        console.log(this.authMain.getToken());
+        this.authMain.getNickname()
+           .subscribe({
+                next: (value) => {
+                    console.log(value)
                 }
-
-            }
-
-        })
-
-        this.auth.error$.subscribe({
-            next: (value) => {
-                // console.log(typeof value)
-            }
-
-        })
+            });
     }
 }

@@ -19,11 +19,11 @@ export class AuthGuard implements CanActivate {
 
         return this.auth.isAuthenticated$
             .pipe(
-                tap((loggedIn) => {
-                    if(loggedIn){
-                        return ;
-                    } else {
+                tap((logged) => {
+                    if(!logged){
                         this.router.navigate(['/auth']).then();
+                    } else {
+                        console.log("Logueado correctamente")
                     }
                 })
             )

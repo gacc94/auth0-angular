@@ -6,8 +6,8 @@ import {
     HttpInterceptor, HttpErrorResponse
 } from '@angular/common/http';
 import {catchError, finalize, Observable, throwError} from 'rxjs';
-import {SpinnerService} from "../../service/spinner.service";
-import {AuthMainService} from "../../service/auth-main.service";
+import {SpinnerService} from "@service/spinner.service";
+import {AuthMainService} from "@service/auth-main.service";
 import {apisRoutes } from "@env/environment.dev";
 
 @Injectable()
@@ -24,15 +24,15 @@ export class SpinnerInterceptor implements HttpInterceptor {
 
         if(token){
             const authReq = request.clone({
-                url: `${this.api}/users`,
+                // url: `${this.api}/users`,
 
                 setHeaders:{
                     Authorization: `Bearer: ${token}`
                 } ,
-                setParams: {
-                    page: '1',
-                    per_page :'10'
-                }
+                // setParams: {
+                //     page: '1',
+                //     per_page :'10'
+                // }
                 // headers: request.headers.set('Authorization', `Bearer ${token}`)
             })
 

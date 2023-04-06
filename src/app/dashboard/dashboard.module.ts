@@ -9,6 +9,8 @@ import {SharedModule} from "../shared/shared.module";
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserComponent } from './pages/user/user.component';
+import { HomeComponent } from './pages/home/home.component';
+import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { UserComponent } from './pages/user/user.component';
         AdminComponent,
         SidebarComponent,
         NavbarComponent,
-        UserComponent
+        UserComponent,
+        HomeComponent,
+        UserDashboardComponent
     ],
     imports: [
         CommonModule,

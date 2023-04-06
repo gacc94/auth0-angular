@@ -9,7 +9,7 @@ import { apisRoutes } from "@env/environment.dev";
 })
 export class UserService {
 
-    // private API = `https://reqres.in/api/users`;
+    private _urlApi = apisRoutes.reqres;
 
     constructor(
         private http: HttpClient
@@ -20,7 +20,7 @@ export class UserService {
             .set('page',1)
             .set('per_page',10)
 
-        return this.http.get<IUserPage>(``,{params})
+        return this.http.get<IUserPage>(`${this._urlApi}/users`,{params})
     }
 
 }

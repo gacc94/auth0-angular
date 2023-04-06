@@ -20,7 +20,10 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
       "paths": {
-          "@env/*": ["src/environments/*"]
+          "@env/*": ["src/environments/*"],
+          "@service/*": ["src/app/service/*"],
+          "@interface/*": ["src/app/core/interface*"],
+
       },
     "lib": [
       "ES2022",

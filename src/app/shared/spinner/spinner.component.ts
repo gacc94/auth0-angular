@@ -11,7 +11,5 @@ export class SpinnerComponent {
     isLoading$ = this.spinnerSvc.isLoading$;
     constructor(
         private readonly spinnerSvc: SpinnerService
-    ) {
-        console.log(this.isLoading$)
-    }
+    ) {}
 }
